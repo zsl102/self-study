@@ -1,0 +1,675 @@
+* { /*通配符*/
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+}
+li {
+	list-style: none;
+}
+input {
+	outline: none;  
+	box-sizing: border-box;
+	border: none;  /*去掉input边框*/
+}
+body {
+	background-color: #F3F5F7;
+}
+.clearfix:before,.clearfix:after {
+	content: "";
+	display: table;
+}
+.cleatfix:after {
+	clear: both;
+}
+.clearfix {
+	*zoom: 1;
+}
+/*引入外部字体图标*/
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?kgs89g');
+  src:  url('../fonts/icomoon.eot?kgs89g#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?kgs89g') format('truetype'),
+    url('../fonts/icomoon.woff?kgs89g') format('woff'),
+    url('../fonts/icomoon.svg?kgs89g#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*头部样式*/
+.header {
+	height: 100px;
+	overflow: hidden;
+}
+.header nav {
+	width: 1600px;
+	height: 42px;
+	margin: 29px auto;
+}
+.logo {
+	float: left;
+}
+.header nav ul li {
+	float: left;
+	line-height: 42px;
+}
+.header nav ul{
+	float: left;
+	margin-left: 50px;
+}
+.header nav ul li a{
+	display: block;
+	color: #060606;
+	padding: 0 18px;
+}
+.header nav ul li a:hover {
+	border-bottom: 2px solid #00A4FF;
+}
+/*个人用户部分*/
+.user {
+	float: right;
+}
+.user li{
+	float: left;
+}
+.user li a{
+	line-height: 42px;
+	font-size: 12px;
+	color: #666666;
+	display: block;
+	margin: 0 20px;
+	text-align: center;
+}
+.icon-bell:before {
+  content: "\e951";
+}
+/*搜索框*/
+.search {
+	width: 410px;
+	height: 42px;
+	border: 1px solid #1FAEFE;
+	float: right;
+}
+.search input[type=text] {
+	width: 360px;
+	height: 42px;
+	color: #BFBFBF;
+	float: left;
+	padding-left: 20px;
+}
+.search input[type=button] {
+	width: 50px;
+	height: 42px;
+	background: #1FAEFE url(../images/search.png) no-repeat;
+	float: left;
+}
+/*banner部分*/
+.banner {
+	width: 100%;
+	height: 420px;
+	background-color: #1C036C;
+}
+.bannerbar {
+	width: 1200px;
+	height: 420px;
+	margin: 0 auto;
+	background: url(../images/banner.png) no-repeat;
+}
+/*左侧栏*/
+.slide {
+	float: left;
+	width: 190px;
+	height: 420px;
+	background-color: rgba( 0, 0, 0, .3);
+}
+.slide li {
+	margin-left: 20px;
+	margin-top: 22px;
+}
+.slide li a{
+	color: #FFF;
+	font-size: 14px;
+}
+.slide li span {
+	float: right;
+	margin-right: 20px;
+}
+.slide li a:hover {
+	color: #0589CF;
+}
+/*右侧栏*/
+.slide-right {
+	width: 230px;
+	height: 300px;
+	margin-top: 50px;
+	background-color: #FFF;
+	float: right;
+}
+.slide-right dt {
+	letter-spacing: 2px;
+	height: 50px;
+	background-color: #9BCEEA;
+	color: #FFF;
+	text-align: center;
+	line-height: 50px;
+	font-weight: 800;
+}
+.slide-right dl dd {
+	width: 193px;
+	height: 60px;
+	box-sizing: border-box;
+	letter-spacing: 2px;
+	border-bottom: 1px solid #EEEEEE;
+	margin: 0 auto;
+	padding-top: 12px;
+}
+.slide-right dl dd h4 {
+	color: #5A5A5A;
+}
+.slide-right dl dd p {
+	font-size: 14px;
+	color: #B1B1B1;
+}
+.slide-right .no-border {
+	border: none;
+}
+/*鼠标放上变效果*/
+.slide-right .slide-right-color:hover h4,
+.slide-right .slide-right-color:hover p {
+	color: #5AC4FF;
+}
+/* 全部课程*/
+.slide-right-button {
+	display: block;
+	width: 190px;
+	height: 40px;
+	background-color: #FFF;
+	text-align: center;
+	line-height: 40px;
+	font-weight: 800;
+	border: 1px solid #66C8FF;
+	transition: all 0.3s;  /*过渡效果*/
+}
+/*全部课程鼠标滑上之后改变颜色*/
+.slide-right .slide-right-button:hover {
+	background-color: #66C8FF;
+	color: #FFF;
+}
+/*精品推荐*/
+.recommended {
+	width: 1200px;
+	height: 48px;
+	margin: 10px auto 0 auto;
+	background-color: #FFF;
+	box-shadow: 0 5px 5px 2px rgba(0, 0, 0, .3);
+}
+.recommended ul li {
+	float: left;
+}
+.recommended ul li a {
+	display: block;
+	color: #252525;
+	margin: 18px 0;
+	padding: 0 35px;
+	box-sizing: border-box;
+	border-right: 1px solid #BFBFBF;
+}
+.recommended ul li:first-child a {
+	font-weight: 600;
+}
+.recommended ul li:last-child a {
+	border: none;
+}
+/*鼠标滑上改变颜色*/
+.recommended ul li a:hover {
+	color: #00A4FF;
+}
+/*修改兴趣*/
+.recommended-more {
+	float: right;
+}
+.recommended-more a {
+	font-size: 14px;
+	color: #42B2FF;
+	display: block;
+	line-height: 60px;
+	text-align: center;
+	margin-right: 26px;
+}
+/*精品推荐---产品部分*/
+.recommended-products {
+	width: 1200px;
+	height: 635px;
+	margin: 36px auto 0 auto;
+}
+.recommended-products-top {
+	height: 40px;
+}
+.recommended-products .recommended-products-top h4 {
+	float: left;
+	color: #676868;
+}
+.recommended-products .recommended-products-top a {
+	float: right;
+	margin-right: 30px;
+	color: #A9A9A9;
+	font-size: 12px;
+}
+/*产品*/
+.products {
+	width: 1200px;
+}
+.products ul li {
+	float:left;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	width: 228px;
+	height: 270px;
+	background-color: #FFF;
+	/*transition: all 0.3s;*/   /*使用js实现*/
+} 
+
+.products ul li:nth-child(5n){
+	margin-right: 0;
+}
+.products ul li a {
+	display: block;
+	height: 270px;	
+}
+/*鼠标滑动到产品上，过渡效果*/ /*过度效果有问题*/
+.products ul li:hover{
+	/*box-shadow: 0px 5px 5px rgba( 0, 0, 0, 0.2);  */
+	/*transform: translateY(-2px);   使用js实现*/
+}
+.products ul li a h4 {
+	font-weight: normal;
+	color: #131313;
+	margin-top: 24px;
+	font-size: 15px;
+}
+.products ul li a h4,
+.products ul li a p {
+	margin-left: 20px;
+	width: 186px;
+}
+.products ul li a p {
+	color: #A5A5A5;
+	margin-top: 10px;
+}
+.products ul li a p span{
+	color: #FFA87D;
+}
+/*编程入门部分：头部*/
+.program {
+	width: 1200px;
+	height: 475px;
+	margin: 0 auto;
+}
+.program-top {
+	height: 40px;
+}
+/*都是左浮动*/
+.program-top h4,
+.program-top ul,
+.program-top ul li {
+	float:left;
+}
+.program-top h4 {
+	color: #494949;
+	font-size: 20px;
+	font-weight: normal;
+}
+.program-top ul {
+	margin-left: 315px;
+}
+.program-top ul li a{
+	display: block;
+	padding: 0 35px;
+	font-size: 20px;
+	color: #979898;
+}
+.program-top ul li a:hover {
+	color: #00A4FF;
+}
+.program-top-right {
+	float: right;
+	margin-right: 30px;
+}
+.program-top-right a {
+	color: #A5A5A5;
+	font-size: 12px;
+}
+/*编程入门内容部分*/
+.program-content {
+	width: 1200px;
+	height: 392px;
+}
+/*左边php部分*/
+.program-content-left {
+	width: 228px;
+	height: 392px;
+	float: left;
+}
+/*右面部分*/
+.program-content-right {
+	width: 957px;
+	height: 392px;
+	float:right;
+}
+.program-content-right-img {
+	width: 957px;
+	height: 100px;
+}
+.program-content-right ul {
+	width: 957px;
+	height: 270px;
+	margin-top: 22px;
+}
+.program-content-right ul li {
+	float: left;
+	width: 228px;
+	height: 270px;
+	overflow: hidden;
+	background-color: #FFF;
+	margin-left: 15px;
+	transition: margin-top 0.3s;
+}
+/*当鼠标滑上的时候，有过度效果，阴影*/
+.program-content-right ul li:hover {
+	margin-top: -2px;
+	box-shadow: 0px 5px 5px rgba(0, 0, 0, .3);
+}
+/*去掉第一个的左边距*/
+.program-content-right ul li:first-child {
+	margin-left:0;
+}
+/*相同的边距*/
+.program-content-right ul li a h4 ,
+.program-content-right ul li a p {	
+	margin: 0 20px 0 23px;
+}
+.program-content-right ul li a h4 {
+	font-weight: normal;
+	margin-top: 25px;
+	font-size: 14px;
+	color: #050505;
+}
+.program-content-right ul li a p {
+	font-size: 12px;
+	margin-top: 20px;
+	color: #999999;
+}
+.program-content-right ul li a p span {
+	color: #FF7C2D;
+}
+/*机器学习工程师部分*/
+.machine {
+	width: 1200px;
+	height: 310px;
+	margin-top: 40px;
+	margin: 0 auto;
+}
+.machine-top {
+	width: 100%;
+	height: 40px;
+}
+.machine-top h4,
+.machine-top ul,
+.machine-top ul li {
+	float: left;
+}
+.machine-top h4 {
+	color: #686969;
+	font-size: 20px;
+	font-weight: normal;
+}
+.machine-top ul {
+	margin-left: 255px;
+}
+.machine-top ul li a{
+	color: #868686;
+	font-size: 18px;
+	padding: 0 35px;
+}
+/* 鼠标滑上改变颜色链接*/
+.machine-top ul li a:hover {
+	color: #34B5FD;
+}
+.machine-top .machine-top-right {
+	float: right;
+	margin-right: 30px;
+}
+.machine-top .machine-top-right a {
+	color: #A5A5A5;
+	font-size: 12px ;
+}
+/*机器头部部分结束*/
+/*机器内容部分*/
+.machine-content {
+	width: 1200px;
+	height: 270px;
+}
+.machine-content ul {
+	float: left;	
+}
+.machine-content ul li {
+	width: 228px;
+	height: 270px;
+	float: left;
+	margin-left: 15px;
+	background-color: #FFF;
+	overflow: hidden;
+	transition: margin-top 0.3s;
+}
+/*过渡效果*/
+.machine-content ul li:hover {
+	box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
+	margin-top: -2px;
+}
+.machine-content ul li:first-child {
+	margin-left: 0;
+}
+/*文字左右边距*/
+.machine-content ul li a h4,
+.machine-content ul li a p {
+	margin: 0 25px 0 25px ;
+}
+.machine-content ul li a h4 {
+	font-weight: normal;
+	font-size: 14px;
+	color: #050505;
+	margin-top: 25px;
+}
+.machine-content ul li a p {
+	color: #999999;
+	font-size: 12px;
+	margin-top: 20px;
+}
+.machine-content ul li a p span {
+	color: #FF7C2D;
+}
+/*机器工程师部分结束*/
+/*前端工程师*/
+.machine-web {
+	margin-top: 40px;
+}
+/*牛人推荐部分*/
+.master {
+	width: 1200px;
+	height: 810px;
+	margin: 40px auto 0 auto;
+}
+/*牛人推荐标题部分*/
+.master-top h4 {
+	height: 40px;
+ 	font-size: 20px;
+ 	color: #4C4C4C;
+ 	font-weight: normal;
+}
+.master-content ul li {
+	width: 228px;
+	height: 320px;
+	position: relative;
+	float: left;
+	margin-right: 15px;
+}
+.master-content ul li a {
+	display: block;
+	overflow: hidden;
+	width: 228px;
+	height: 320px;
+}
+.master-content ul li:nth-child(5),
+.master-content ul li:last-child {
+	margin-right: 0;
+}
+.master-content ul li span {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 178px;
+	height: 80px;
+	background-color: rgba( 0, 0, 0, .3);
+	color: #FFF;
+	padding: 20px 25px;
+}
+.master-content ul li span p {
+	font-size: 12px;
+}
+.master-content ul li strong {
+	width: 84px;
+	height: 20px;
+	position: absolute;
+	right: -10px;
+	top: 20px;
+	font-weight: normal;
+	background: url(../images/hot2.png) no-repeat;
+	font-size: 10px;
+	color: #F55B63;
+	overflow: visible;
+	padding-left: 5px;
+	text-align: center;
+	line-height: 20px;
+}
+.master-margin-top {
+	margin-top: 20px;
+}
+/*牛人推荐特殊的一个li标签*/
+.master .master-advertisement {
+	width: 471px;
+	height: 320px;
+}
+.master .master-advertisement a {
+	display: block;
+	width: 471px;
+	height: 320px;
+}
+.master .master-advertisement a span {
+	height: 100px;
+
+	background-color: transparent;
+	position: absolute;
+	top: 70px;
+	left: 5px;
+ }
+ .master-advertisement a span h4 {
+ 	font-size: 30px;
+ 	color: #E4CE07;
+ }
+ .master .master-advertisement a span p {
+ 	font-size: 27px;
+ 	color: #FFF;
+ }
+.master .master-advertisement a span input{
+	color: #F9E103;
+	width: 87px;
+	height: 25px;
+	background: url(../images/input-border.png) no-repeat;
+	text-align: center;
+	line-height: 25px;
+	font-size: 13px;
+	margin-top: 12px;
+}
+/*结尾部分：footer*/
+.footer {
+	height: 240px;
+	width: 100%;
+	background-color: #FFF;
+	padding-top: 30px;
+}
+.footer-content {
+	width: 1200px;
+	height: 240px;
+	margin: 0 auto;
+}
+.footer-content-app {
+	width: 451px;
+	margin-left: 20px;
+	float: left;
+}
+.footer-content-app p {
+	width: 451px;
+	font-size: 12px;
+	color: #666666;
+	margin-top: 25px;
+}
+.footer-content-app a {
+	display: block;
+	width: 120px;
+	height: 36px;
+	border: 1px solid #00A4FF;
+	font-size: 16px;
+	text-align: center;
+	line-height: 36px;
+	margin-top: 15px;
+}
+/*底部右面  列表部分*/
+.footer-list {
+	width: 530px;
+	height: 130px;
+	float: right;
+}
+/* list部分相同的dt样式*/
+.footer-list dl dt {
+	font-size: 16px;
+	font-weight: 200;
+	color: #5A5A5A;
+	margin-bottom: 12px;
+}
+/* list部分相同的dd样式*/
+.footer-list dl dd {
+	font-size: 12px;
+	color: #333333;
+	line-height: 20px;
+}
+.footer-list-left {
+	float: left
+}
+.footer-list-middle {
+	float: left;
+	margin-left: 145px;
+}
+.footer-list-right {
+	float: right;
+	margin-right: 30px;
+}
+/*结束*/
