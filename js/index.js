@@ -19,6 +19,7 @@
 // 	}
 // })()
 
+// 盒子移动动画
 (function(){
 	var productsFather = document.getElementsByClassName('products-father')[0];
 	// console.log(productsFather);
@@ -69,3 +70,35 @@ function transformMove(moveName){
 (function(){
 	transformMove("moveTop");
 })();
+
+// input 
+(function(){
+	// 获取搜索框节点
+	var inputNode = document.getElementsByClassName("search")[0];
+	// console.log(inputNode);
+	// 获取文本框
+	var search = inputNode.childNodes[0];
+	// console.log(search);
+	//获取焦点
+	search.onfocus = function(){
+		// 当文本内容是 请输入搜索内容时  清空value
+		if(search.value == "请输入搜索内容"){
+			console.log(search.value);
+			search.value = "";		
+		}
+	}
+	// 失去焦点
+	search.onblur = function(){
+		// 当文本内容不是 原内容  就给value
+		if(search.value != "请输入搜索内容"){
+			search.value = "请输入搜索内容";
+		}
+	} 
+})()
+// banner的轮播图片
+// 用js把图片放背景给banner里的标签
+	var bannerCarousel = document.getElementsByClassName("bannerCarousel");
+	var bannerCarouselUl = bannerCarousel[0].childNodes[1];
+	var moveX = "-1200px";
+	// console.log(bannerCarouselUl)
+	bannerCarouselUl.style.transform = "translateX("+ moveX +")";
