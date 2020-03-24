@@ -157,6 +157,46 @@ body {
 	width: 100%;
 	height: 100%;
 }
+/*bannercarousel_bt_ol 底部按钮*/
+.bannercarousel_bt_ol {
+	width: 200px;
+	height: 20px;
+	background-color: rgba(0, 0, 0, .5);
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 10px;
+}
+.bannercarousel_bt_ol li {
+	width: 10px;
+	height: 10px;
+	background-color: #fff;
+	border-radius: 50%;
+	margin: 5px 15px;
+}
+.bannercarousel_bt_ol li:first-child {
+	background-color: #f00;
+}
+/*.bannercarousel_bt_left 左边的按钮和右边按钮*/
+.bannercarousel_bt_left,
+.bannercarousel_bt_right {
+	width: 50px;
+	height: 60px;
+	background-color: rgba( 0, 0, 0, .7);
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #FFF;
+	text-align: center;
+	line-height: 60px;
+}
+.bannercarousel_bt_left {
+	left: 190px;
+}
+.bannercarousel_bt_right {
+	right: 230px;
+}
 /*给li的标签  插入背景*/
 .bannerCarousel li:first-child a {
 	background: url(../images/banner.png) no-repeat;

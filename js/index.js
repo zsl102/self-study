@@ -97,8 +97,15 @@ function transformMove(moveName){
 })()
 // banner的轮播图片
 // 用js把图片放背景给banner里的标签
+	// 获取bannerCarousel 这个元素 
 	var bannerCarousel = document.getElementsByClassName("bannerCarousel");
+	// 获取ul标签
 	var bannerCarouselUl = bannerCarousel[0].childNodes[1];
-	var moveX = "-1200px";
-	// console.log(bannerCarouselUl)
-	bannerCarouselUl.style.transform = "translateX("+ moveX +")";
+	// 获取ul的宽度
+	var ulWidth = bannerCarouselUl.clientWidth;
+	// console.log(ulWidth);
+	// 获取一个li的宽度
+	var moveX = "1200px";
+	function run(){
+		bannerCarouselUl.style.left = "-50px";
+	}
