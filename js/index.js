@@ -74,17 +74,16 @@ function transformMove(moveName){
 // input 
 (function(){
 	// 获取搜索框节点
-	var inputNode = document.getElementsByClassName("search")[0];
+	var search = document.querySelector(".search_text");
 	// console.log(inputNode);
 	// 获取文本框
-	var search = inputNode.childNodes[0];
-	// console.log(search);
 	//获取焦点
 	search.onfocus = function(){
 		// 当文本内容是 请输入搜索内容时  清空value
 		if(search.value == "请输入搜索内容"){
-			console.log(search.value);
-			search.value = "";		
+			// console.log(search.value);
+			search.value = "";
+			search.style.color = "000";		
 		}
 	}
 	// 失去焦点
@@ -92,6 +91,7 @@ function transformMove(moveName){
 		// 当文本内容不是 原内容  就给value
 		if(search.value != "请输入搜索内容"){
 			search.value = "请输入搜索内容";
+			search.style.color = "#CCC";
 		}
 	} 
 })()
