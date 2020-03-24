@@ -97,25 +97,75 @@ function transformMove(moveName){
 })()
 // banner的轮播图片
 // 用js把图片放背景给banner里的标签
-	// 获取bannerCarousel 这个元素 
-	var bannerCarouselUl = document.getElementsByClassName("bannercarousel_bt_ul");
-	console.log(bannerCarouselUl);
-	// 获取ol标签
-	var bannerCarouselOl = document.getElementsByClassName("bannercarousel_bt_ol")[0];
-	console.log(bannerCarouselOl);
-	// 获取左侧的按钮
-	var bannerCarouselBtLeft = document.getElementsByClassName("bannercarousel_bt_left")[0];
-	console.log(bannerCarouselBtLeft);
-	// 获取右侧的按钮
-	var bannerCarouselBtRight = document.getElementsByClassName("bannercarousel_bt_right")[0];
-	console.log(bannerCarouselBtRight);
-	// 获取ul标签
+	// 获取bannerCarousel标签
+	var bannerCarousel =document.querySelector(".bannerCarousel");
+	// console.log(bannerCarousel);
 	
-	// 获取ul的宽度
-	var ulWidth = bannerCarouselUl.clientWidth;
-	// console.log(ulWidth);
-	// 获取一个li的宽度
-	// var moveX = "1200px";
-	// function run(){
-	// 	bannerCarouselUl.style.left = "-50px";
-	// }
+	// 获取ul标签
+	var bannerCarouselUl = document.querySelector(".bannercarousel_bt_ul");
+	// console.log(bannerCarouselUl);
+	
+	// 获取ol标签
+	var bannerCarouselOlList = document.querySelector(".bannercarousel_bt_ol").getElementsByTagName("li");
+	// console.log(bannerCarouselOl);
+	
+	// console.log(bannerCarouselOlList)
+	// 获取左侧的按钮
+	var bannerCarouselBtLeft = document.querySelector(".bannercarousel_bt_left");
+	// console.log(bannerCarouselBtLeft);
+	
+	// 获取右侧的按钮
+	var bannerCarouselBtRight = document.querySelector(".bannercarousel_bt_right");
+	// console.log(bannerCarouselBtRight);
+	
+	// var bannerCarouselWidth = bannerCarousel.offsetWidth; // 获取bannerCarousel相框的宽度
+	
+	// var ulWidth = bannerCarouselUl.clientWidth;  // 获取ul的宽度
+	var index = 0; //默认小按钮的索引是从0开始的
+	var timer;   //定义的定时器，方便清除
+
+	function change(num) {
+		bannerCarouselUl.style.marginLeft = -1200*num+"px";
+		for(let i = 0; i<5;i++){
+			bannerCarouselOlList[i].setAttribute("class","");
+		}
+		bannerCarouselOlList[num].className = "on";
+		index = num;
+	}
+	function autoPlay() {
+		index++;
+		if(index == 5){
+			index = 0;
+		}
+		change(index);  //调用change函数   将index传入
+	}
+	var timer = setInterval(autoPlay,1000);  //定义timer  定时器每隔1000毫秒调用一次autoPlay函数，实现自动轮播
+	bannerCarousel.onmouseover = function(){ //鼠标滑上清除定时器
+		clearInterval(timer);   //清除定时器
+	}
+	bannerCarousel.onmouseout = function(){ // 鼠标移出，定时器启动
+		timer = setInterval(autoPlay,1000)
+	}
+	for(let i = 0; i < 5; i++){
+		bannerCarouselOlList[i].onmouseover = function(){
+			change(i);
+		}
+	}
+	bannerCarouselBtLeft.onclick = function(){
+		index = index-1;
+		if(index == -1){
+			index = 4;
+			change(index);
+		}else{
+			change(index);
+		}
+	}
+	bannerCarouselBtRight.onclick = function(){
+		index = index+1;
+		if(index == 5){
+			index = 0;
+			change(index);
+		}else{
+			change(index);
+		}
+	}

@@ -175,7 +175,10 @@ body {
 	border-radius: 50%;
 	margin: 5px 15px;
 }
-.bannercarousel_bt_ol li:first-child {
+/*.bannercarousel_bt_ol li:first-child {
+	background-color: #f00;
+}*/
+.bannercarousel_bt_ol .on {
 	background-color: #f00;
 }
 /*.bannercarousel_bt_left 左边的按钮和右边按钮*/
