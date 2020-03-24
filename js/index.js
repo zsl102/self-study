@@ -98,14 +98,24 @@ function transformMove(moveName){
 // banner的轮播图片
 // 用js把图片放背景给banner里的标签
 	// 获取bannerCarousel 这个元素 
-	var bannerCarousel = document.getElementsByClassName("bannerCarousel");
+	var bannerCarouselUl = document.getElementsByClassName("bannercarousel_bt_ul");
+	console.log(bannerCarouselUl);
+	// 获取ol标签
+	var bannerCarouselOl = document.getElementsByClassName("bannercarousel_bt_ol")[0];
+	console.log(bannerCarouselOl);
+	// 获取左侧的按钮
+	var bannerCarouselBtLeft = document.getElementsByClassName("bannercarousel_bt_left")[0];
+	console.log(bannerCarouselBtLeft);
+	// 获取右侧的按钮
+	var bannerCarouselBtRight = document.getElementsByClassName("bannercarousel_bt_right")[0];
+	console.log(bannerCarouselBtRight);
 	// 获取ul标签
-	var bannerCarouselUl = bannerCarousel[0].childNodes[1];
+	
 	// 获取ul的宽度
 	var ulWidth = bannerCarouselUl.clientWidth;
 	// console.log(ulWidth);
 	// 获取一个li的宽度
-	var moveX = "1200px";
-	function run(){
-		bannerCarouselUl.style.left = "-50px";
-	}
+	// var moveX = "1200px";
+	// function run(){
+	// 	bannerCarouselUl.style.left = "-50px";
+	// }
